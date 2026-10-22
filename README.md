@@ -1,3 +1,15 @@
+## My s3 Buckets
+
+Public bucket:
+
+[https://public-qmm2bx.s3.amazonaws.com/index.html](https://public-qmm2bx.s3.amazonaws.com/index.html)
+
+Private bucket: 
+
+[https://secret-qmm2bx.s3.amazonaws.com/pg2148.txt?AWSAccessKeyId=ASIA2QRDWHW35NSPKBPR&Signature=MvSjqzbGDkWTNLCmUQ4R2jaNmSo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFg6%2Fc8BASUToL9aJ5RfShGWxRKAUK8j1k7JFPoPVR1PAiEA0rojS8ysLr9GcOka0uQ4wi8aBDdFOaJMwTuq48UGop4qrQIIbBAAGgw3MjI3MDMxMDU0NjMiDOnYvI6uhFRCMj25CCqKApxgsJFpGIhyhRUktzzzyvqcOUGgTEMXKrJ4x6UFxpb%2BA%2Fq4TFOFcIaO%2BeQb0fEtXgtQZdFXjuTTpnY3H4aku8IlrtWtmunAn0AfelOaXbPywohckxxNySGhB0WdQ7T25kAmMizuanhtLpLI4iE9upVs81qTU%2BmwhuXbLz2xyx%2FU4QH6NL4PMcyHnTQ4VyQVCJsewNnB0RTAKGxnfsslkS9ASSOecntBsaqqSSvyzwlgcizztNqcPpXNPdxSON2qasEtPYYVHm4A6nJQKXb6Zv%2BATrT8%2FJw3p5UMeL8E%2BZtMuga7mSZvrXXQO7YwjsC0ngAQsEGoDqlHRuMPSFs12XEhXDbboiGcszAjMKH65dYGOp0BxF1owDl%2Fr%2BMqK2kSf344qn6ccr152oPuc3yoPpgUNAGJZjdf6E6YqlwT4i4Lwsi9QtUvEiPUkS%2BrrhYCm99nUEQWsb3UIA9x%2BBnNUCiyRXOUUWEDlCx1svlvX%2F5J5pQbAVJdmo7%2BHWmLkq65Kk2aEyCf9I4j3Got01qvywrBXqhAcIgbR6IRcbXPQkKpicwe2jI%2Fpu9CfqK7DzQhew%3D%3D&Expires=1793245733](https://secret-qmm2bx.s3.amazonaws.com/pg2148.txt?AWSAccessKeyId=ASIA2QRDWHW35NSPKBPR&Signature=MvSjqzbGDkWTNLCmUQ4R2jaNmSo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFg6%2Fc8BASUToL9aJ5RfShGWxRKAUK8j1k7JFPoPVR1PAiEA0rojS8ysLr9GcOka0uQ4wi8aBDdFOaJMwTuq48UGop4qrQIIbBAAGgw3MjI3MDMxMDU0NjMiDOnYvI6uhFRCMj25CCqKApxgsJFpGIhyhRUktzzzyvqcOUGgTEMXKrJ4x6UFxpb%2BA%2Fq4TFOFcIaO%2BeQb0fEtXgtQZdFXjuTTpnY3H4aku8IlrtWtmunAn0AfelOaXbPywohckxxNySGhB0WdQ7T25kAmMizuanhtLpLI4iE9upVs81qTU%2BmwhuXbLz2xyx%2FU4QH6NL4PMcyHnTQ4VyQVCJsewNnB0RTAKGxnfsslkS9ASSOecntBsaqqSSvyzwlgcizztNqcPpXNPdxSON2qasEtPYYVHm4A6nJQKXb6Zv%2BATrT8%2FJw3p5UMeL8E%2BZtMuga7mSZvrXXQO7YwjsC0ngAQsEGoDqlHRuMPSFs12XEhXDbboiGcszAjMKH65dYGOp0BxF1owDl%2Fr%2BMqK2kSf344qn6ccr152oPuc3yoPpgUNAGJZjdf6E6YqlwT4i4Lwsi9QtUvEiPUkS%2BrrhYCm99nUEQWsb3UIA9x%2BBnNUCiyRXOUUWEDlCx1svlvX%2F5J5pQbAVJdmo7%2BHWmLkq65Kk2aEyCf9I4j3Got01qvywrBXqhAcIgbR6IRcbXPQkKpicwe2jI%2Fpu9CfqK7DzQhew%3D%3D&Expires=1793245733)
+
+I would use a public bucket if I'm not concerned about anything stored in the bucket being seen by anyone around the world, so the data it holds is not very sensitive (like the book data). Meanwhile, I would use a presigned URL if I want to keep what is stored in the bucket private to just me or people I give the link to, so the data is more sensitive.
+
 # Lab 06: Working with S3 Storage
 
 The goal of this lab is to get you comfortable with **Amazon S3** object storage, building on what you have learned about the command line, AWS accounts, and scripting. You will stage a collection of 100 books from [Project Gutenberg](https://www.gutenberg.org/) in a **public** bucket that anyone can browse in a web browser, and share a single book from a **private** bucket with a time-limited presigned URL.
@@ -101,20 +113,17 @@ The Learner Lab has no long-lived access keys. Instead, each lab session provide
 1. On the Learner Lab page, click **AWS Details**, then **Show** next to **AWS CLI**.
 2. Copy the whole block, from `[default]` through the end of the long `aws_session_token` line.
 3. Paste it into `~/.aws/credentials`, replacing anything already in the file, and save. It should look like this, with each value on a single line:
-
-    ```text
-    [default]
-    aws_access_key_id=ASIA...
-    aws_secret_access_key=...
-    aws_session_token=...
-    ```
-
+   ```text
+      [default]
+      aws_access_key_id=ASIA...
+      aws_secret_access_key=...
+      aws_session_token=...
+   ```
 4. Set the default region and output format (this writes `~/.aws/config`):
-
-    ```bash
-    aws configure set region us-east-1
-    aws configure set output json
-    ```
+   ```bash
+      aws configure set region us-east-1
+      aws configure set output json
+   ```
 
 > **Credentials expire when the lab session ends (about 4 hours).** When `aws` or `boto3` suddenly fail with expired-token errors, click **Start Lab** again if the session has ended, open **AWS Details** → **AWS CLI** → **Show**, and replace the contents of `~/.aws/credentials` with the new block. Your buckets are not affected.
 
@@ -175,11 +184,6 @@ Each class script performs a single step. Your script combines these steps into 
 - Accept three command line arguments, in this order: the path of the book list file (`book_urls.txt`), the path of the index page (`index.html`), and the name of the bucket (`public-mst3k`).
 - Set up the logger as in the class scripts, and use it to report status in each function.
 - Create **one** S3 client at the top of the script, right after the logger, so that all functions share it. The class scripts create the client inside their `try` block; in your script, create it once at module level instead of in every function:
-
-    ```python
-    s3 = boto3.client("s3", region_name="us-east-1")
-    ```
-
 - Wrap calls to external services (HTTP downloads with `requests` and `boto3` calls to AWS) in `try`/`except` blocks that log the error.
 - Define the functions below. For each one, the signature shows its arguments, followed by what it returns and what should happen inside.
   - `parse_args()`
@@ -191,21 +195,7 @@ Each class script performs a single step. Your script combines these steps into 
     - **Returns:** a list of the local paths of the books, e.g. `["books/pg11.txt", "books/pg12.txt", ...]`. You pass this list to `upload_files`.
     - **Inside:** create `dest_dir` with `os.makedirs(dest_dir, exist_ok=True)` (like `mkdir -p`). Read `list_file` (one URL per line, skip blank lines). For each URL, download the book with `requests` and save it in `dest_dir` under the last part of the URL. For example,
 
-        ```text
-        https://www.gutenberg.org/cache/epub/1342/pg1342.txt
-        ```
-
         is saved as `books/pg1342.txt`. Keep these names, because the links in `index.html` point to them (`<a href="pg1342.txt">`). If the file already exists (check with `os.path.exists(path)`), skip the download, so you can rerun the script without downloading everything again. Pause for about a second between downloads (`time.sleep(1)`) to avoid bombarding Project Gutenberg's servers with requests. If a download fails, log the error and continue with the next book. **Hint:** inside the loop over the URLs, wrap the download in a `try`/`except` block. `requests.get()` raises an exception for network errors and timeouts, and `response.raise_for_status()` raises one for HTTP errors such as 404. `requests.RequestException` catches all of them.
-
-        ```python
-        try:
-            response = requests.get(url, timeout=30)
-            response.raise_for_status()  # raise an error for 404 etc.
-            # save response.content to the file
-        except requests.RequestException as e:
-            log.error(f"Error downloading {url}: {e}")
-        ```
-
   - `create_bucket(bucket)`
     - **Arguments:** `bucket`, the bucket name.
     - **Returns:** `True` if the bucket exists afterwards, `False` otherwise.
@@ -230,40 +220,9 @@ Each class script performs a single step. Your script combines these steps into 
 **Hints:** The class scripts do not cover making a bucket public. Use these two calls in `make_public`.
 
 - To turn off Block Public Access for one bucket:
-
-    ```python
-    s3.put_public_access_block(
-        Bucket=bucket,
-        PublicAccessBlockConfiguration={
-            "BlockPublicAcls": False,
-            "IgnorePublicAcls": False,
-            "BlockPublicPolicy": False,
-            "RestrictPublicBuckets": False,
-        },
-    )
-    ```
-
 - A bucket policy is a JSON document like this:
 
-    ```json
-    {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": "*",
-          "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::public-mst3k/*"
-        }
-      ]
-    }
-    ```
-
     Build the policy as a Python dictionary named `policy`, and replace `public-mst3k` in the example with your `bucket` value. Then pass the dictionary as a string with `json.dumps(policy)` to `s3.put_bucket_policy()`:
-
-    ```python
-    s3.put_bucket_policy(Bucket=bucket, Policy=json.dumps(policy))
-    ```
 
     The policy must be attached **after** Block Public Access is turned off, otherwise S3 rejects it with an `AccessDenied` error.
 
@@ -280,13 +239,10 @@ Downloading 100 books takes a few minutes. Watch the log output for errors. If t
 ### Step 3: Verify
 
 1. Count the books in your bucket. The total should be 101 objects (100 books plus `index.html`):
-
-    ```bash
-    aws s3 ls s3://public-mst3k/ | wc -l
-    ```
-
+   ```bash
+      aws s3 ls s3://public-mst3k/ | wc -l
+   ```
 2. Open `https://public-mst3k.s3.amazonaws.com/index.html` in your web browser, **in a private/incognito window** so that you are not signed in to AWS. You should see the list of books. Click a few links; each book should open as plain text.
-
 3. Open the AWS Management Console (click the green **AWS** icon on the Learner Lab page), go to **S3**, and click `public-mst3k`. On the **Permissions** tab, confirm that Block Public Access is off and that your bucket policy is attached. The bucket should be labeled **Publicly accessible**.
 
 **Success:** Anyone with the URL can now browse and read your book collection. Keep this bucket: Labs 07–09 read the books from it.
@@ -302,12 +258,6 @@ Downloading 100 books takes a few minutes. Watch the log output for errors. If t
 In the top-level directory of your clone, create `share_book.sh`. The script should:
 
 - Start with a shebang and strict error handling:
-
-    ```bash
-    #!/bin/bash
-    set -euo pipefail
-    ```
-
 - Accept three positional arguments: the URL of a plain-text book on Project Gutenberg, the name of the bucket (`secret-mst3k`), and the expiration of the presigned URL in seconds. Print a usage message and `exit 1` if any argument is missing.
 - Download the book with `curl` into the `books/` folder, keeping the file name from the URL.
 - Create the bucket with `aws s3 mb`, unless it already exists. **Hint:** `aws s3 ls "s3://$BUCKET" > /dev/null 2>&1` succeeds only if the bucket exists and you can access it.
